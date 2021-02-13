@@ -1,0 +1,15 @@
+name: munros
+description: A library for filtering and sorting Scottish Munros.
+version: 0.0.1
+repository: https://github.com/drp33/munros.git
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  test: 1.15.7
