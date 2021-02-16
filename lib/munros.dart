@@ -3,6 +3,7 @@ import 'src/filters.dart';
 import 'src/models.dart';
 import 'src/queries.dart';
 
+export 'src/comparators.dart';
 export 'src/filters.dart';
 export 'src/models.dart';
 
