@@ -1,21 +1,12 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
-const defaultFilePath = 'packages/munros/assets/munrotab_v6.2.csv';
-
-/// Loads the default munro data.
-Future<List<Map<String, String>>> loadMunros() async {
-  final data = await rootBundle.load(defaultFilePath);
-  return compute(parseCsv, data, debugLabel: 'Parsing "$defaultFilePath".');
-}
 
 /// Parses CSV data and returns a [Map] for every line after
 /// the header until an empty line (only commas and whitespace) is reached.
 ///
 /// The keys for each map correspond to the values in the header.
-List<Map<String, String>> parseCsv(ByteData data) {
+Iterable<Map<String, String>> parseCsv(ByteData data) {
   final text = latin1.decode(data.buffer.asUint8List());
   final lines = LineSplitter.split(text).takeWhile(_isNotBlank);
   final rows = lines.map(_extractCommaSeparatedValues);
@@ -24,7 +15,7 @@ List<Map<String, String>> parseCsv(ByteData data) {
   return rows.skip(1).map((row) {
     // If header has a blank value then remove that map entry.
     return Map.fromIterables(header, row)..remove('');
-  }).toList();
+  });
 }
 
 bool _isNotBlank(String line) {
