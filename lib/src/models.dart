@@ -22,6 +22,20 @@ class Munro {
 
   /// Grid reference.
   final String gridReference;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Munro &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          heightMeters == other.heightMeters &&
+          category == other.category &&
+          gridReference == other.gridReference);
+
+  @override
+  int get hashCode =>
+      name.hashCode ^ heightMeters.hashCode ^ category.hashCode ^ gridReference.hashCode;
 }
 
 enum HillCategory {
