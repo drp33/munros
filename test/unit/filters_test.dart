@@ -89,5 +89,13 @@ void main() {
       expect(combined(munroTop), isFalse); // Wrong category.
       expect(combined(shortestMunro), isTrue);
     });
+
+    test('should return an identity filter if supplied with no filters', () {
+      final identity = combineFilters([]);
+      expect(identity(munro), isTrue);
+      expect(identity(munroTop), isTrue);
+      expect(identity(shortestMunro), isTrue);
+      expect(identity(null), isTrue);
+    });
   });
 }

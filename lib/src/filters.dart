@@ -41,6 +41,10 @@ abstract class MunroFilter {
 }
 
 MunroSelector combineFilters(Iterable<MunroSelector> filters) {
+  if (filters.isEmpty) {
+    return _alwaysTrue;
+  }
+
   return filters.reduce((filterA, filterB) {
     return (Munro munro) => filterA(munro) && filterB(munro);
   });
