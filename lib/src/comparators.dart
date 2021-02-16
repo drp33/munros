@@ -20,7 +20,7 @@ class MunroComparator {
   }
 }
 
-Comparator<Munro> combineComparators(Iterable<Comparator<Munro>> comparators) {
+Comparator<Munro> combineComparators(List<Comparator<Munro>> comparators) {
   if (comparators.isEmpty) {
     return _alwaysZero;
   }
