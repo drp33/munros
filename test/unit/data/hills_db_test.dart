@@ -7,20 +7,22 @@ import '../../fixtures/hills_db.dart';
 void main() {
   group('HillsDbLocalRepository', () {
     // Widget test required in order to load from rootBundle.
-    // TODO: Investigate - test hangs but this is not the case in app. Skipping.
-    testWidgets('returns munros from the default hill database csv file', (_) async {
-      final repository = HillsDbLocalRepository();
-      final munros = await repository.loadMunros();
+    testWidgets('returns munros from the default hill database csv file',
+        (WidgetTester tester) async {
+      await tester.runAsync(() async {
+        final repository = HillsDbLocalRepository();
+        final munros = await repository.loadMunros();
 
-      // Check some known examples are loaded in.
-      expect(
-        munros,
-        containsAll(<Munro>[
-          benNevis,
-          benVorlichNorthTop,
-          beinnTeallach,
-        ]),
-      );
-    }, skip: true);
+        // Check some known examples are loaded in.
+        expect(
+          munros,
+          containsAll(<Munro>[
+            benNevis,
+            benVorlichNorthTop,
+            beinnTeallach,
+          ]),
+        );
+      });
+    });
   });
 }
