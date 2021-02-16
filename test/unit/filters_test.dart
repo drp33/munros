@@ -2,26 +2,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:munros/src/filters.dart';
 import 'package:munros/src/models.dart';
 
-const munro = Munro(
-  name: 'Ben Nevis',
-  heightMeters: 1344.53,
-  category: HillCategory.munro,
-  gridReference: 'NN166712',
-);
+import '../fixtures/hills_db.dart';
 
-const munroTop = Munro(
-  name: 'Ben Vorlich North Top',
-  heightMeters: 931,
-  category: HillCategory.munroTop,
-  gridReference: 'NN294130',
-);
-
-const shortestMunro = Munro(
-  name: 'Beinn Teallach',
-  heightMeters: 914.6,
-  category: HillCategory.munro,
-  gridReference: 'NN361859',
-);
+const munro = benNevis;
+const munroTop = benVorlichNorthTop;
+const shortestMunro = beinnTeallach;
 
 final throwsAssertionError = throwsA(isA<AssertionError>());
 
