@@ -1,6 +1,6 @@
 # munros
 
-A Flutter package for filtering and sorting Scottish Munro data from  [http://www.hills-database.co.uk/munrotab_v6.2.csv](http://www.hills-database.co.uk/munrotab_v6.2.csv).
+A Flutter package for filtering and sorting Scottish Munro data from  [http://www.hills-database.co.uk](http://www.hills-database.co.uk/) (munrotab_v6.2.csv).
 
 The data is bundled with the package, therefore it can be used fully offline.
 
@@ -22,9 +22,9 @@ Apply any number of filters. You can use the provided `MunroFilter`:
 
 ```dart
 final munros = await getMunros(
-  filterBy: [
+	filterBy: [
 		MunroFilter.heightMeters(min: 900, max: 1100),
-	  MunroFilter.category(HillCategory.munro),
+		MunroFilter.category(HillCategory.munro),
 	],
 );
 ```
