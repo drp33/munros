@@ -1,10 +1,7 @@
-import 'package:meta/meta.dart';
-
-import 'comparators.dart';
+import 'core/filters.dart';
+import 'core/models.dart';
+import 'core/queries.dart';
 import 'data/hills_db.dart';
-import 'filters.dart';
-import 'models.dart';
-import 'repositories.dart';
 
 /// Returns a list of [Munro]s.
 ///
@@ -25,23 +22,4 @@ Future<List<Munro>> getMunros({
   final repository = HillsDbLocalRepository();
 
   return queryMunros(repository, filterBy, sortBy, maxResults);
-}
-
-@visibleForTesting
-Future<List<Munro>> queryMunros(
-  ReadOnlyMunrosRepository repository,
-  List<MunroSelector> filters,
-  List<Comparator<Munro>> comparators,
-  int limit,
-) async {
-  assert(limit == null || limit > 0);
-
-  final munros = await repository.loadMunros();
-
-  final filter = combineFilters(filters);
-  final comparator = combineComparators(comparators);
-
-  final orderedResults = munros.where(filter).toList()..sort(comparator);
-
-  return limit == null ? orderedResults : orderedResults.take(limit).toList();
 }

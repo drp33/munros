@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import '../munros.dart';
+import 'models.dart';
 
 /// Pre-defined Comparator<[Munro]>s for sorting results with.
 abstract class MunroComparator {

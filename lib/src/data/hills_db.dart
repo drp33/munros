@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 
-import '../models.dart';
-import '../repositories.dart';
+import '../core/models.dart';
+import '../core/repositories.dart';
 import '../util/csv_parser.dart';
 
 /// Presents a subset of the fields available from hills-database

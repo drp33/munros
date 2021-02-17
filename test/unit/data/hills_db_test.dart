@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:munros/src/data/hills_db.dart';
-import 'package:munros/src/models.dart';
+import 'package:munros/src/core/models.dart';
 
 import '../../fixtures/hills_db.dart';
 

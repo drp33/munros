@@ -1,4 +1,4 @@
-import 'package:munros/src/models.dart';
+import 'package:munros/src/core/models.dart';
 
 const benNevis = Munro(
   name: 'Ben Nevis',

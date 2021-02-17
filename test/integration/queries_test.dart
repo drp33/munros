@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:munros/munros.dart';
-import 'package:munros/src/interface.dart';
-
+import 'package:munros/src/core/queries.dart';
 import '../fixtures/repositories.dart';
 
 const munroA = Munro(

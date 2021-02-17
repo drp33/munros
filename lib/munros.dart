@@ -1,4 +1,4 @@
-export 'src/comparators.dart' hide combineComparators;
-export 'src/filters.dart' hide combineFilters;
-export 'src/interface.dart' show getMunros;
-export 'src/models.dart';
+export 'src/core/comparators.dart' hide combineComparators;
+export 'src/core/filters.dart' hide combineFilters;
+export 'src/core/models.dart';
+export 'src/interface.dart';

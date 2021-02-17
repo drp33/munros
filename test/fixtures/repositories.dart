@@ -1,5 +1,5 @@
-import 'package:munros/src/models.dart';
-import 'package:munros/src/repositories.dart';
+import 'package:munros/src/core/models.dart';
+import 'package:munros/src/core/repositories.dart';
 
 class FakeMunrosRepository implements ReadOnlyMunrosRepository {
   List<Munro> munros;
