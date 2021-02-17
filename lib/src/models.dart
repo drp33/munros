@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 
+/// Munro data model.
 class Munro {
   const Munro({
     @required this.name,
@@ -38,6 +39,7 @@ class Munro {
       name.hashCode ^ heightMeters.hashCode ^ category.hashCode ^ gridReference.hashCode;
 }
 
+/// Possible hill classifications.
 enum HillCategory {
   munro,
   munroTop,

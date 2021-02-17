@@ -1,9 +1,9 @@
 import 'models.dart';
 
-/// Signature for functions that select a [Munro].
+/// A function useful for filtering [Munro] collections.
 typedef MunroSelector = bool Function(Munro munro);
 
-/// Factory for filters to use with an [Iterable<Munro>].
+/// Pre-defined [MunroSelector]s to filter results with.
 abstract class MunroFilter {
   /// Select by height in meters.
   ///

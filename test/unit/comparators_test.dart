@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:munros/munros.dart';
+import 'package:munros/src/comparators.dart';
 
 import '../fixtures/hills_db.dart';
 
